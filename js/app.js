@@ -117,7 +117,7 @@ footerArticles[0].addEventListener('click', event => {
 });
 
 /* **** 7. Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen) **** */
-// Adderar en eventlistener för eventet 'click' på det sista elemeten som navbar har som child (bild på en shopping bag).
+// Adderar en eventlistener för eventet 'click' på det sista elemeten som <nav> har som child (bild på en shopping bag).
 navbar.children[3].addEventListener('click', function (event) {
     // Utvärderar om <header> har två children som är element.
     if (header.children.length === 2) {
@@ -176,7 +176,7 @@ btnNodeList.forEach(function (element) {
 function createNewUl () {
     // Skapar ett nytt <ul>-element.
     const newUl = document.createElement('ul');
-    // Lägger till css-styling till <ul>-elementet. Hade kunnat göras i ett steg om det fanns en css-klass att tilldela, men vet inte om jag får gära tillägg i 'style.css'.
+    // Lägger till css-styling till <ul>-elementet. Hade kunnat göras i ett steg om det fanns en css-klass att tilldela, men vet inte om jag får göra tillägg i 'style.css'.
     newUl.style.display = 'block';
     newUl.style.position = 'absolute';
     newUl.style.right = '0';
