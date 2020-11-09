@@ -1,8 +1,8 @@
-//1. En knapp som återställer allt till originalutseendet. (Home i navbar)
+/* **** 1. En knapp som återställer allt till originalutseendet. (Home i navbar) **** */
 // Targetar hela navbaren.
 const navbar = document.getElementById('header-navigation');
 
-// Targetar det första 'child' hos navbar som är ett element (a-elementet 'Home').
+// Targetar det första 'child' hos navbar som är ett element (<a>-elementet 'Home').
 const resetBtn = navbar.children[0];
 /*
 const header = document.querySelector('header');
@@ -22,9 +22,19 @@ resetBtn.addEventListener('click', function (event) {
     } */
 });
 
-// 2. Byt ut minst ett foto
+/* **** 2. Byt ut minst ett foto **** */
+// Targetar 
+const imgNodeList = document.querySelectorAll('main article figure img');
 
-// 3. Ändra bakgrundsfärg på minst ett element.
+// Lägger till en eventlistener för eventet 'dubbelklick' för varje <img>-element i listan som byter ut bilden till en grön hoodie om användaren dubbbelklickar på bilden.
+imgNodeList.forEach(element => {
+    element.addEventListener('dblclick', event => {
+        event.target.setAttribute('src', './img/hoodie-forrest.png')
+    })
+});
+
+
+/* **** 3. Ändra bakgrundsfärg på minst ett element. **** */
 // Targetar <body>-elementet.
 const body = document.querySelector('body');
 
@@ -41,9 +51,17 @@ body.addEventListener('keydown', function (event) {
     }
 })
 
-// 4. Ändra text på minst ett element
+/* **** 4. Ändra text på minst ett element **** */
+// Targetar alla <h3>-element som ligger intu ett <article>-element som finns intu ett <section>-element inuti <footer>.
+const footerArticlesHeading = document.querySelectorAll('footer section article h3');
 
-//5. Ändra färg på minst en knapp
+// Lägger till en eventlistener för det andra <h3>-elementet i listan, det mellersta på sidan, som uppdaterar texten till svenska när muspekaren förs över elementet.
+footerArticlesHeading[1].addEventListener('mouseenter', event => {
+    event.target.textContent = 'Här finns vi';
+})
+
+
+/* **** 5. Ändra färg på minst en knapp **** */
 // Skapar en nodelist som innehåller alla element av sorten 'button'.
 const btnNodeList = document.querySelectorAll('button');
 /* 
@@ -60,9 +78,9 @@ btnNodeList.forEach(function (element) {
         });
 });
 
-// 6. Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen)
+/* **** 6. Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen) **** */
 
-// 7. Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen)
+/* **** 7. Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen) **** */
 // Targetar <header> och sätter dess position till 'relative'.
 const header = document.querySelector('header');
 header.style.position = 'relative';
@@ -114,7 +132,7 @@ navbar.children[3].addEventListener('click', function (event) {
     }
 });
 
-// 8. Listan ska innehålla flera li element
+/* **** 8. Listan ska innehålla flera li element **** */
 /* 
     Loopar igenom nodelistan med <button>-element och adderar en eventlisteners för varje element.
     Eventlistener lyssnar efter 'click'-eventet och lägger till produkten som tillhör knappen i kundvagnen.
