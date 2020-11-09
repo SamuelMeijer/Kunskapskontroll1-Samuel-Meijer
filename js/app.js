@@ -79,6 +79,16 @@ btnNodeList.forEach(function (element) {
 });
 
 /* **** 6. Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen) **** */
+// Adderar en eventlistener för eventet 'click' på det första <h3>-elementet som finns i <footer>.
+footerArticlesHeading[0].addEventListener('click', event => {
+    // Initierar en variabel som pekar på <article>-elementet som är parent till <h3>-elementet användaren har klickat på.
+    let article = event.target.parentElement;
+
+    // Sålänge parent-elementet har element som children, ta bort det första element som är child.
+    while (article.children.length > 0) {
+        article.removeChild(article.children[0]);
+    };
+});
 
 /* **** 7. Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen) **** */
 // Targetar <header> och sätter dess position till 'relative'.
