@@ -11,7 +11,24 @@ resetBtn.addEventListener('click', function (event) {
 });
 
 // 2. Byt ut minst ett foto
+
 // 3. Ändra bakgrundsfärg på minst ett element
+// Targetar <body>-elementet.
+const body = document.querySelector('body');
+
+// Lägger till en eventlistener för eventet 'keydown' på <body>.
+body.addEventListener('keydown', function (event) {
+    // Om knappen som tryckts ner är 'd' eller 'D' kommer bakgrundsfärgen på <body> ändras till grå.
+    if (event.key === 'd' || event.key === 'D') {
+        body.style.backgroundColor = 'rgb(128,128,128)';
+    }
+
+    // Om knappen som tryckts ner är 'l' eller 'L' kommer bakgrundsfärgen på <body> ändras till vit.
+    if (event.key === 'l' || event.key === 'L') {
+        body.style.backgroundColor = '#fff';
+    }
+})
+
 // 4. Ändra text på minst ett element
 
 //5. Ändra färg på minst en knapp
