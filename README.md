@@ -22,6 +22,8 @@ Använd knapparna på sidan. Men du är inte begränsad till det.
     - Om användaren för muspekaren över en av knapparna med texten 'buy' ändras bakgrundsfärgen på knappen.
     - När användaren för man bort muspekaren från knapparna ändras bakgrundsfärgen tillbaka.
 6. Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen)
-7. Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen)
+7. Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen) (GJORT)
+    - Om användaren trycker på shopping-bagen i navbaren skapas ett ul-element innehållandes de varor som användaren har lagt till i sin kundvagn, eller en text som informerar användaren om att kundvagnen är tom.
+    - Om ett ul-element redan har skapats ändras visningsalternativet hos ul-listan så att den visas eller döljs när användaren trycker på shopping-bagen.
 8. Listan ska innehålla flera li element
     - Varje li element ska ha en synlig border. (Valfritt utseende)

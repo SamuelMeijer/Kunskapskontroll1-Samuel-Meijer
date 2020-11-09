@@ -70,7 +70,7 @@ header.style.position = 'relative';
 // Adderar en eventlistener för eventet 'click' på det sista elemeten som navbar har som child.
 navbar.children[3].addEventListener('click', function (event) {
     // Utvärderar om <header> har två children som är element.
-    if (header.children.length === 2){
+    if (header.children.length === 2) {
         // Om ja:
         // Skapar ett nytt <ul>-element.
         const newUl = document.createElement('ul');
@@ -115,3 +115,29 @@ navbar.children[3].addEventListener('click', function (event) {
 });
 
 // 8. Listan ska innehålla flera li element
+/* 
+    Loopar igenom nodelistan med <button>-element och adderar en eventlisteners för varje element.
+    Eventlistener lyssnar efter 'click'-eventet och lägger till produkten som tillhör knappen i kundvagnen.
+*/
+btnNodeList.forEach(function (element) {
+    element.addEventListener('click', function (event) {
+        // Undersöker om användares kundvagn enbart innehåller ett <li>-element och om dess text är 'your shopping cart is empty'
+        if(header.children[2].children.length === 1 || header.children[2].children[0].textContent === 'Your shopping cart is empty') {
+            // Om ja, uppdaterar texten
+            header.children[2].children[0].textContent = 'Your shopping cart:';
+        };
+
+        // Skapar ett nytt <li>-element, vars text motsvarar den produkt som tillhör knappen som användaren har klickat på, och lägger till det sist i <ul>-elementet.
+        const ulElement = document.querySelector('header ul')
+        ulElement.insertAdjacentHTML('beforeend', `<li>${event.target.parentElement.children[1].textContent} (${event.target.parentElement.children[2].textContent})</li>`);
+
+        // Loopar igenom alla <li>-element och ändrar border samt mindre css-styling.
+        for (let i = 0; i < ulElement.children.length; i++) {
+            let hue = (360 / ulElement.children.length) * i;
+            ulElement.children[i].style.height = '2rem';
+            ulElement.children[i].style.border = `2px solid hsl(${hue}, 70%, 70%)`;
+            ulElement.children[i].style.listStyle = 'none';
+            ulElement.children[i].style.textAlign = 'center';
+        };
+    });
+});
