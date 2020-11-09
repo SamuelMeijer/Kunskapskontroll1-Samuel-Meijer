@@ -9,12 +9,15 @@ Använd knapparna på sidan. Men du är inte begränsad till det.
 
 **_Måste vara med:_** 
 1. En knapp som återställer allt till originalutseendet
-2. Alla ändringar som du har gjort ska ändras tillbaka
-3. Byt ut minst ett foto
-4. Ändra bakgrundsfärg på minst ett element
-5. Ändra text på minst ett element
-6. Ändra färg på minst en knapp
-7. Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen)
-8. Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen)
-9. Listan ska innehålla flera li element
-10. Varje li element ska ha en synlig border. (Valfritt utseende)
+    - Alla ändringar som du har gjort ska ändras tillbaka
+
+    TODO: 'Home' i header-nav ska fungera som resetbutton.
+2. Byt ut minst ett foto
+3. Ändra bakgrundsfärg på minst ett element
+4. Ändra text på minst ett element
+5. Ändra färg på minst en knapp
+    För man muspekaren över knapparna 'buy' ändras bakgrundsfärgen, för man bort muspekaren från knapparna ändras bakgrundsfärgen tillbaka.
+6. Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen)
+7. Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen)
+8. Listan ska innehålla flera li element
+    - Varje li element ska ha en synlig border. (Valfritt utseende)
